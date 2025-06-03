@@ -63,6 +63,7 @@ router.get('/lista', async (req, res) => {
         res.status(500).json({ error: 'No se pudieron listar los archivos' });
     }
 });
+
 router.get('/descarga/:nombre', async (req, res) => {
     try {
         const nombre = decodeURIComponent(req.params.nombre);

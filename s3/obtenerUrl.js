@@ -8,7 +8,7 @@ require("dotenv").config();
 async function obtenerUrlArchivo (nombreArchivo) {
   const comando = new GetObjectCommand({
     Bucket: process.env.AWS_BUCKET,
-    Key: nombreArchivo,
+    Key: "LuisFer"+nombreArchivo,
   });
 
   const url = await getSignedUrl(s3, comando, { expiresIn: 60 }); // segundos

@@ -5,11 +5,11 @@ const s3 = require('./s3client');
 async function subirArchivo(pathLocal, nombreArchivo) {
 
   const archivo = fs.readFileSync(pathLocal);
-  console.log(process.env.AWS_BUCKET);
+  //console.log(process.env.AWS_BUCKET);
   
   const command = new PutObjectCommand({
     Bucket: process.env.AWS_BUCKET,
-    Key: nombreArchivo,
+    Key: "LuisFer"+nombreArchivo,
     Body: archivo,
     ContentType: 'application/pdf',
   });
